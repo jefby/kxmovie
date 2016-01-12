@@ -35,9 +35,11 @@ static NSString * formatTimeInterval(CGFloat seconds, BOOL isLeft)
     m = m % 60;
 
     NSMutableString *format = [(isLeft && seconds >= 0.5 ? @"-" : @"") mutableCopy];
-    if (h != 0) [format appendFormat:@"%d:%0.2d", h, m];
-    else        [format appendFormat:@"%d", m];
-    [format appendFormat:@":%0.2d", s];
+    if (h != 0)
+        [format appendFormat:@"%ld:%0.2ld", (long)h, (long)m];
+    else
+        [format appendFormat:@"%ld", (long)m];
+    [format appendFormat:@":%0.2ld", (long)s];
 
     return format;
 }
@@ -153,7 +155,7 @@ static NSMutableDictionary * gHistory;
                                parameters: (NSDictionary *) parameters
 {    
     id<KxAudioManager> audioManager = [KxAudioManager audioManager];
-    [audioManager activateAudioSession];    
+    [audioManager activateAudioSession];
     return [[KxMovieViewController alloc] initWithContentPath: path parameters: parameters];
 }
 
@@ -210,7 +212,7 @@ static NSMutableDictionary * gHistory;
         _dispatchQueue = NULL;
     }
     
-    LoggerStream(1, @"%@ dealloc", self);
+//    LoggerStream(1, @"%@ dealloc", self);
 }
 
 - (void)loadView
@@ -371,7 +373,7 @@ _messageLabel.hidden = YES;
             _minBufferedDuration = _maxBufferedDuration = 0;
             [self play];
             
-            LoggerStream(0, @"didReceiveMemoryWarning, disable buffering and continue playing");
+//            LoggerStream(0, @"didReceiveMemoryWarning, disable buffering and continue playing");
             
         } else {
             
@@ -454,7 +456,7 @@ _messageLabel.hidden = YES;
     _buffered = NO;
     _interrupted = YES;
     
-    LoggerStream(1, @"viewWillDisappear %@", self);
+//    LoggerStream(1, @"viewWillDisappear %@", self);
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -467,7 +469,7 @@ _messageLabel.hidden = YES;
     [self showHUD:YES];
     [self pause];
     
-    LoggerStream(1, @"applicationWillResignActive");
+ //   LoggerStream(1, @"applicationWillResignActive");
 }
 
 #pragma mark - gesture recognizer
@@ -499,8 +501,8 @@ _messageLabel.hidden = YES;
         
         const CGPoint vt = [sender velocityInView:self.view];
         const CGPoint pt = [sender translationInView:self.view];
-        const CGFloat sp = MAX(0.1, log10(fabsf(vt.x)) - 1.0);
-        const CGFloat sc = fabsf(pt.x) * 0.33 * sp;
+        const CGFloat sp = MAX(0.1, log10(fabs(vt.x)) - 1.0);
+        const CGFloat sc = fabs(pt.x) * 0.33 * sp;
         if (sc > 10) {
             
             const CGFloat ff = pt.x > 0 ? 1.0 : -1.0;            
@@ -547,7 +549,7 @@ _messageLabel.hidden = YES;
     if (_decoder.validAudio)
         [self enableAudio:YES];
 
-    LoggerStream(1, @"play movie");
+//    LoggerStream(1, @"play movie");
 }
 
 - (void) pause
@@ -559,7 +561,7 @@ _messageLabel.hidden = YES;
     //_interrupted = YES;
     [self enableAudio:NO];
     [self updatePlayButton];
-    LoggerStream(1, @"pause movie");
+//    LoggerStream(1, @"pause movie");
 }
 
 - (void) setMoviePosition: (CGFloat) position
@@ -622,7 +624,7 @@ _messageLabel.hidden = YES;
 - (void) setMovieDecoder: (KxMovieDecoder *) decoder
                withError: (NSError *) error
 {
-    LoggerStream(2, @"setMovieDecoder");
+//    LoggerStream(2, @"setMovieDecoder");
             
     if (!error && decoder) {
         
@@ -670,7 +672,7 @@ _messageLabel.hidden = YES;
                 _maxBufferedDuration = _minBufferedDuration * 2;
         }
         
-        LoggerStream(2, @"buffered limit: %.1f - %.1f", _minBufferedDuration, _maxBufferedDuration);
+//        LoggerStream(2, @"buffered limit: %.1f - %.1f", _minBufferedDuration, _maxBufferedDuration);
         
         if (self.isViewLoaded) {
             
@@ -719,7 +721,7 @@ _messageLabel.hidden = YES;
     
     if (!_glView) {
         
-        LoggerVideo(0, @"fallback to use RGB video frame and UIKit");
+//        LoggerVideo(0, @"fallback to use RGB video frame and UIKit");
         [_decoder setupVideoFrameFormat:KxVideoFrameFormatRGB];
         _imageView = [[UIImageView alloc] initWithFrame:bounds];
         _imageView.backgroundColor = [UIColor blackColor];
@@ -849,7 +851,7 @@ _messageLabel.hidden = YES;
                                 
                                 memset(outData, 0, numFrames * numChannels * sizeof(float));
 #ifdef DEBUG
-                                LoggerStream(0, @"desync audio (outrun) wait %.4f %.4f", _moviePosition, frame.position);
+//                                LoggerStream(0, @"desync audio (outrun) wait %.4f %.4f", _moviePosition, frame.position);
                                 _debugAudioStatus = 1;
                                 _debugAudioStatusTS = [NSDate date];
 #endif
@@ -861,7 +863,7 @@ _messageLabel.hidden = YES;
                             if (delta > 0.1 && count > 1) {
                                 
 #ifdef DEBUG
-                                LoggerStream(0, @"desync audio (lags) skip %.4f %.4f", _moviePosition, frame.position);
+//                                LoggerStream(0, @"desync audio (lags) skip %.4f %.4f", _moviePosition, frame.position);
                                 _debugAudioStatus = 2;
                                 _debugAudioStatusTS = [NSDate date];
 #endif
@@ -925,10 +927,10 @@ _messageLabel.hidden = YES;
         
         [audioManager play];
         
-        LoggerAudio(2, @"audio device smr: %d fmt: %d chn: %d",
-                    (int)audioManager.samplingRate,
-                    (int)audioManager.numBytesPerSample,
-                    (int)audioManager.numOutputChannels);
+//        LoggerAudio(2, @"audio device smr: %d fmt: %d chn: %d",
+ //                   (int)audioManager.samplingRate,
+ //                   (int)audioManager.numBytesPerSample,
+ //                   (int)audioManager.numOutputChannels);
         
     } else {
         
@@ -1128,7 +1130,7 @@ _messageLabel.hidden = YES;
     
     if (correction > 1.f || correction < -1.f) {
         
-        LoggerStream(1, @"tick correction reset %.2f", correction);
+//        LoggerStream(1, @"tick correction reset %.2f", correction);
         correction = 0;
         _tickCorrectionTime = 0;
     }

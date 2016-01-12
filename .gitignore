@@ -22,7 +22,6 @@ project.xcworkspace
 
 ## my
 tmp/*
-libs/FFmpeg/*
 output/*
 plan
 
