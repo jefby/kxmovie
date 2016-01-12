@@ -36,7 +36,10 @@
             // @"http://www.wowza.com/_h264/BigBuckBunny_115k.mov",
             @"rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov",
             @"http://santai.tv/vod/test/test_format_1.3gp",
-            @"http://santai.tv/vod/test/test_format_1.mp4",
+            @"http://30.2.45.185/sample_iTunes.mov",
+            @"http://30.2.45.185/infinite_4k.mp4",
+             @"http://30.2.45.185/hevc_sample.mp4",
+
         
             //@"rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov",
             //@"http://santai.tv/vod/test/BigBuckBunny_175k.mov",
@@ -244,7 +247,7 @@
     [self presentViewController:vc animated:YES completion:nil];
     //[self.navigationController pushViewController:vc animated:YES];    
 
-    LoggerApp(1, @"Playing a movie: %@", path);
+//    LoggerApp(1, @"Playing a movie: %@", path);
 }
 
 @end

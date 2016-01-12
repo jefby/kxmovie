@@ -142,7 +142,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
         return NO;
     
     _audioRoute = CFBridgingRelease(route);
-    LoggerAudio(1, @"AudioRoute: %@", _audioRoute);
+//    LoggerAudio(1, @"AudioRoute: %@", _audioRoute);
     return YES;
 }
 
@@ -239,8 +239,8 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
     _numBytesPerSample = _outputFormat.mBitsPerChannel / 8;
     _numOutputChannels = _outputFormat.mChannelsPerFrame;
     
-    LoggerAudio(2, @"Current output bytes per sample: %ld", _numBytesPerSample);
-    LoggerAudio(2, @"Current output num channels: %ld", _numOutputChannels);
+//    LoggerAudio(2, @"Current output bytes per sample: %ld", _numBytesPerSample);
+//    LoggerAudio(2, @"Current output num channels: %ld", _numOutputChannels);
             
     // Slap a render callback on the unit
     AURenderCallbackStruct callbackStruct;
@@ -276,7 +276,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
                    "Checking number of output channels"))
         return NO;
     
-    LoggerAudio(2, @"We've got %lu output channels", newNumChannels);
+//    LoggerAudio(2, @"We've got %lu output channels", newNumChannels);
     
     // Get the hardware sampling rate. This is settable, but here we're only reading.
     size = sizeof(_samplingRate);
@@ -287,7 +287,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
         
         return NO;
     
-    LoggerAudio(2, @"Current sampling rate: %f", _samplingRate);
+ //   LoggerAudio(2, @"Current sampling rate: %f", _samplingRate);
     
     size = sizeof(_outputVolume);
     if (checkError(AudioSessionGetProperty(kAudioSessionProperty_CurrentHardwareOutputVolume,
@@ -296,7 +296,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
                    "Checking current hardware output volume"))
         return NO;
     
-    LoggerAudio(1, @"Current output volume: %f", _outputVolume);
+//    LoggerAudio(1, @"Current output volume: %f", _outputVolume);
     
     return YES;	
 }
@@ -484,13 +484,13 @@ static void sessionInterruptionListener(void *inClientData, UInt32 inInterruptio
     
 	if (inInterruption == kAudioSessionBeginInterruption) {
         
-		LoggerAudio(2, @"Begin interuption");
+//		LoggerAudio(2, @"Begin interuption");
         sm.playAfterSessionEndInterruption = sm.playing;
         [sm pause];
                 
 	} else if (inInterruption == kAudioSessionEndInterruption) {
 		
-        LoggerAudio(2, @"End interuption");
+//        LoggerAudio(2, @"End interuption");
         if (sm.playAfterSessionEndInterruption) {
             sm.playAfterSessionEndInterruption = NO;
             [sm play];
@@ -524,7 +524,7 @@ static BOOL checkError(OSStatus error, const char *operation)
 		// no, format it as an integer
 		sprintf(str, "%d", (int)error);
     
-	LoggerStream(0, @"Error: %s (%s)\n", operation, str);
+//	LoggerStream(0, @"Error: %s (%s)\n", operation, str);
     
 	//exit(1);
     
