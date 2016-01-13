@@ -401,7 +401,7 @@ _messageLabel.hidden = YES;
     // LoggerStream(1, @"viewDidAppear");
     
     [super viewDidAppear:animated];
-        
+    // check whether is present viewcontroller
     if (self.presentingViewController)
         [self fullscreenMode:YES];
     
@@ -442,7 +442,8 @@ _messageLabel.hidden = YES;
         
         if (_moviePosition == 0 || _decoder.isEOF)
             [gHistory removeObjectForKey:_decoder.path];
-        else if (!_decoder.isNetwork)
+//        else if (!_decoder.isNetwork)
+        else
             [gHistory setValue:[NSNumber numberWithFloat:_moviePosition]
                         forKey:_decoder.path];
     }
@@ -704,6 +705,7 @@ _messageLabel.hidden = YES;
 
 - (void) restorePlay
 {
+    //记忆功能，有bug，不能恢复记忆
     NSNumber *n = [gHistory valueForKey:_decoder.path];
     if (n)
         [self updatePosition:n.floatValue playMode:YES];

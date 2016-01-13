@@ -689,7 +689,7 @@ static int interrupt_callback(void *ctx);
         
     return 0;
 }
-
+//Initializes the class before it receives its first message.
 + (void)initialize
 {
     av_log_set_callback(FFLog);

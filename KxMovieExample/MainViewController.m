@@ -30,16 +30,14 @@
         
         _remoteMovies = @[
 
-//            @"http://eric.cast.ro/stream2.flv",
-//            @"http://liveipad.wasu.cn/cctv2_ipad/z.m3u8",
-            @"http://www.wowza.com/_h264/BigBuckBunny_175k.mov",
-            // @"http://www.wowza.com/_h264/BigBuckBunny_115k.mov",
-            @"rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov",
-            @"http://santai.tv/vod/test/test_format_1.3gp",
             @"http://30.2.45.185/sample_iTunes.mov",
             @"http://30.2.45.185/infinite_4k.mp4",
-             @"http://30.2.45.185/hevc_sample.mp4",
-
+            @"http://30.2.45.185/hevc_sample.mp4",
+            @"rtsp://10.210.177.180:5454/pano.mp4",
+            @"http://10.210.177.180:9527/policestory.mkv",
+            @"http://10.210.177.180:9527/1111.mpg",
+            @"http://10.210.177.180:9527/pujing.flv",
+            @"http://10.210.177.180:9527/she.mp3",
         
             //@"rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov",
             //@"http://santai.tv/vod/test/BigBuckBunny_175k.mov",
@@ -67,7 +65,10 @@
     [self.view addSubview:self.tableView];
 }
 
-- (BOOL)prefersStatusBarHidden { return YES; }
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 - (void)viewDidLoad
 {
@@ -124,7 +125,7 @@
                     [fileType isEqual: NSFileTypeSymbolicLink]) {
                     
                     NSString *ext = path.pathExtension.lowercaseString;
-                    
+                    //support file format
                     if ([ext isEqualToString:@"mp3"] ||
                         [ext isEqualToString:@"caff"]||
                         [ext isEqualToString:@"aiff"]||
@@ -243,7 +244,7 @@
     //parameters[KxMovieParameterMaxBufferedDuration] = @(0.0f);
     
     KxMovieViewController *vc = [KxMovieViewController movieViewControllerWithContentPath:path
-                                                                               parameters:parameters];
+                                                                            parameters:parameters];
     [self presentViewController:vc animated:YES completion:nil];
     //[self.navigationController pushViewController:vc animated:YES];    
 
