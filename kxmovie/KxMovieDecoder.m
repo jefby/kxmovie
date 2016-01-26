@@ -16,7 +16,7 @@
 #include "libswresample/swresample.h"
 #include "libavutil/pixdesc.h"
 #import "KxAudioManager.h"
-#import "KxLogger.h"
+//#import "KxLogger.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 NSString * kxmovieErrorDomain = @"ru.kolyvan.kxmovie";

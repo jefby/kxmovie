@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4AE41B481E8B792CF3CC1631 /* libPods-kxmovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC5449BAD3D78B1C826D7F14 /* libPods-kxmovie.a */; };
-		52F7291AB157F114CC875A35 /* libPods-KxMovieExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7616F77D0C6E83BFBE864E /* libPods-KxMovieExample.a */; };
 		8704657C16F6ECA000D4083E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8704657A16F6EC9100D4083E /* libiconv.dylib */; };
 		87E793FD16390F6D000A0848 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E793FC16390F6D000A0848 /* UIKit.framework */; };
 		87E793FF16390F6D000A0848 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E793FE16390F6D000A0848 /* Foundation.framework */; };
@@ -64,11 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		029763B4B4613295D9459B75 /* Pods-kxmovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kxmovie.release.xcconfig"; path = "Pods/Target Support Files/Pods-kxmovie/Pods-kxmovie.release.xcconfig"; sourceTree = "<group>"; };
-		40C19A5A70BBDE2CB846B44C /* Pods-KxMovieExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KxMovieExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KxMovieExample/Pods-KxMovieExample.debug.xcconfig"; sourceTree = "<group>"; };
 		4E6AB9BC191288370010CAA1 /* kxmovie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "kxmovie-Prefix.pch"; sourceTree = "<group>"; };
-		4E6AB9BD19128FDA0010CAA1 /* KxLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KxLogger.h; sourceTree = "<group>"; };
-		6EB74AD96257AC23D1840A6E /* Pods-kxmovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kxmovie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kxmovie/Pods-kxmovie.debug.xcconfig"; sourceTree = "<group>"; };
 		8704657A16F6EC9100D4083E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		87E793F816390F6D000A0848 /* KxMovieExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KxMovieExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E793FC16390F6D000A0848 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -101,15 +95,12 @@
 		87E7945216391BD2000A0848 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		87E7946116394577000A0848 /* KxAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxAudioManager.h; sourceTree = "<group>"; };
 		87FD6175163A75440090956E /* libkxmovie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libkxmovie.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CB7B2BEC4DA0C7F02E37231 /* Pods-KxMovieExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KxMovieExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-KxMovieExample/Pods-KxMovieExample.release.xcconfig"; sourceTree = "<group>"; };
 		9C1F3C301C44CA7200175F3A /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswscale.a; path = libs/FFmpeg/libswscale.a; sourceTree = "<group>"; };
 		9C1F3C311C44CA7200175F3A /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswresample.a; path = libs/FFmpeg/libswresample.a; sourceTree = "<group>"; };
 		9C1F3C321C44CA7200175F3A /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = libs/FFmpeg/libavutil.a; sourceTree = "<group>"; };
 		9C1F3C331C44CA7200175F3A /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = libs/FFmpeg/libavformat.a; sourceTree = "<group>"; };
 		9C1F3C341C44CA7200175F3A /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = libs/FFmpeg/libavcodec.a; sourceTree = "<group>"; };
 		9C1F3C3A1C44CB0400175F3A /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/usr/lib/libbz2.tbd; sourceTree = DEVELOPER_DIR; };
-		AE7616F77D0C6E83BFBE864E /* libPods-KxMovieExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KxMovieExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC5449BAD3D78B1C826D7F14 /* libPods-kxmovie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kxmovie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +125,6 @@
 				87E794411639110F000A0848 /* Accelerate.framework in Frameworks */,
 				87E794421639110F000A0848 /* QuartzCore.framework in Frameworks */,
 				87E794431639110F000A0848 /* OpenGLES.framework in Frameworks */,
-				52F7291AB157F114CC875A35 /* libPods-KxMovieExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +140,6 @@
 				87FD6192163A75DF0090956E /* Accelerate.framework in Frameworks */,
 				87FD6191163A75DC0090956E /* QuartzCore.framework in Frameworks */,
 				87FD6193163A75E10090956E /* OpenGLES.framework in Frameworks */,
-				4AE41B481E8B792CF3CC1631 /* libPods-kxmovie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +153,6 @@
 				87FD6177163A75440090956E /* kxmovie */,
 				87E793FB16390F6D000A0848 /* Frameworks */,
 				87E793F916390F6D000A0848 /* Products */,
-				A8D90E5F4F2D3E841D38FE8A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,8 +185,6 @@
 				87E79439163910EA000A0848 /* Accelerate.framework */,
 				87E79437163910D0000A0848 /* QuartzCore.framework */,
 				87E79435163910CA000A0848 /* OpenGLES.framework */,
-				AE7616F77D0C6E83BFBE864E /* libPods-KxMovieExample.a */,
-				FC5449BAD3D78B1C826D7F14 /* libPods-kxmovie.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -240,21 +226,9 @@
 				87E794231639107F000A0848 /* KxMovieGLView.m */,
 				87E794241639107F000A0848 /* KxMovieViewController.h */,
 				87E794251639107F000A0848 /* KxMovieViewController.m */,
-				4E6AB9BD19128FDA0010CAA1 /* KxLogger.h */,
 				4E6AB9BC191288370010CAA1 /* kxmovie-Prefix.pch */,
 			);
 			path = kxmovie;
-			sourceTree = "<group>";
-		};
-		A8D90E5F4F2D3E841D38FE8A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				40C19A5A70BBDE2CB846B44C /* Pods-KxMovieExample.debug.xcconfig */,
-				8CB7B2BEC4DA0C7F02E37231 /* Pods-KxMovieExample.release.xcconfig */,
-				6EB74AD96257AC23D1840A6E /* Pods-kxmovie.debug.xcconfig */,
-				029763B4B4613295D9459B75 /* Pods-kxmovie.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,12 +238,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87E7941A16390F6D000A0848 /* Build configuration list for PBXNativeTarget "KxMovieExample" */;
 			buildPhases = (
-				A2C6BDECF505A3311D781AC8 /* Check Pods Manifest.lock */,
 				87E793F416390F6D000A0848 /* Sources */,
 				87E793F516390F6D000A0848 /* Frameworks */,
 				87E793F616390F6D000A0848 /* Resources */,
-				D692A15BBB46DC3846BEB90D /* Embed Pods Frameworks */,
-				F5155886832E4459068E90B9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,11 +255,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87FD6180163A75440090956E /* Build configuration list for PBXNativeTarget "kxmovie" */;
 			buildPhases = (
-				5ECBF198089640F94EB5581A /* Check Pods Manifest.lock */,
 				87FD6171163A75440090956E /* Sources */,
 				87FD6172163A75440090956E /* Frameworks */,
 				87FD6173163A75440090956E /* CopyFiles */,
-				A40198521DB36331D7E94E55 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,84 +313,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5ECBF198089640F94EB5581A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A2C6BDECF505A3311D781AC8 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A40198521DB36331D7E94E55 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kxmovie/Pods-kxmovie-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D692A15BBB46DC3846BEB90D /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KxMovieExample/Pods-KxMovieExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F5155886832E4459068E90B9 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KxMovieExample/Pods-KxMovieExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		87E793F416390F6D000A0848 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -475,7 +366,6 @@
 		};
 		87E7941B16390F6D000A0848 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40C19A5A70BBDE2CB846B44C /* Pods-KxMovieExample.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -524,7 +414,6 @@
 		};
 		87E7941C16390F6D000A0848 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CB7B2BEC4DA0C7F02E37231 /* Pods-KxMovieExample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -566,7 +455,6 @@
 		};
 		87FD617E163A75440090956E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EB74AD96257AC23D1840A6E /* Pods-kxmovie.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -609,7 +497,6 @@
 		};
 		87FD617F163A75440090956E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 029763B4B4613295D9459B75 /* Pods-kxmovie.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

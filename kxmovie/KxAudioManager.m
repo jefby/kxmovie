@@ -17,7 +17,7 @@
 #import "TargetConditionals.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <Accelerate/Accelerate.h>
-#import "KxLogger.h"
+//#import "KxLogger.h"
 
 #define MAX_FRAME_SIZE 4096
 #define MAX_CHAN       2
@@ -143,7 +143,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
     
     _audioRoute = CFBridgingRelease(route);
 
-    LoggerAudio(1, @"AudioRoute: %@", _audioRoute);
+//    LoggerAudio(1, @"AudioRoute: %@", _audioRoute);
     return YES;
 }
 
@@ -277,7 +277,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
                    "Checking number of output channels"))
         return NO;
     
-    LoggerAudio(2, @"We've got %lu output channels", newNumChannels);
+ //   LoggerAudio(2, @"We've got %lu output channels", newNumChannels);
     
     // Get the hardware sampling rate. This is settable, but here we're only reading.
     size = sizeof(_samplingRate);
@@ -288,7 +288,7 @@ static OSStatus renderCallback (void *inRefCon, AudioUnitRenderActionFlags	*ioAc
         
         return NO;
     
-    LoggerAudio(2, @"Current sampling rate: %f", _samplingRate);
+//    LoggerAudio(2, @"Current sampling rate: %f", _samplingRate);
     
     size = sizeof(_outputVolume);
     if (checkError(AudioSessionGetProperty(kAudioSessionProperty_CurrentHardwareOutputVolume,
@@ -485,13 +485,13 @@ static void sessionInterruptionListener(void *inClientData, UInt32 inInterruptio
     
 	if (inInterruption == kAudioSessionBeginInterruption) {
         
-		LoggerAudio(2, @"Begin interuption");
+//		LoggerAudio(2, @"Begin interuption");
         sm.playAfterSessionEndInterruption = sm.playing;
         [sm pause];
                 
 	} else if (inInterruption == kAudioSessionEndInterruption) {
 		
-        LoggerAudio(2, @"End interuption");
+   //     LoggerAudio(2, @"End interuption");
         if (sm.playAfterSessionEndInterruption) {
             sm.playAfterSessionEndInterruption = NO;
             [sm play];
@@ -525,7 +525,7 @@ static BOOL checkError(OSStatus error, const char *operation)
 		// no, format it as an integer
 		sprintf(str, "%d", (int)error);
     
-	LoggerStream(0, @"Error: %s (%s)\n", operation, str);
+//	LoggerStream(0, @"Error: %s (%s)\n", operation, str);
     
 	//exit(1);
     
